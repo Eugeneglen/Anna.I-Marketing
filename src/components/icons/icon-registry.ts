@@ -11,7 +11,7 @@
 export type IconName =
   | 'brain'
   | 'knotScribbleSpiral'
-  | 'knot'
+  | 'juggle'
   | 'scribble'
   | 'spiral'
   | 'nodeCluster'
@@ -56,50 +56,78 @@ export const ICONS: Record<IconName, IconDef> = {
       <circle class="icon-node" cx="42" cy="6" r="0.5"/>`,
   },
 
-  // ── 2. KNOT → ARROW → SPIRAL ──────────────────────────────
-  // Copy: "Chaos → Order" — tangled knot (chaos) → arrow →
-  // neat loader spiral (order). Three-part transformation.
+  // ── 2. CHAOS → ARROW → ORDER ──────────────────────────────
+  // Copy: "Chaos → Order" — 9 scattered dots (chaos) → arrow →
+  // same 9 dots arranged in a 3×3 grid (coordinated order).
+  //
+  // Design rationale: the SAME elements (9 dots, identical size)
+  // appear on both sides — only the ARRANGEMENT differs. This is
+  // the purest possible expression of "disorder transformed into
+  // a coordinated system." Instantly legible at any size.
+  //
+  // Redesigned (v3): previous versions used crossing S-curves which
+  // read as a "messy ball of yarn / random doodle" — too organic
+  // and hand-drawn. Dots are geometric, bold, and unambiguously
+  // intentional. The scatter→grid transformation is a universally
+  // understood visual metaphor (cf. "scatter plot → organized data").
   knotScribbleSpiral: {
     viewBox: '0 0 120 48',
     title: 'From chaos to order',
     inner: `
-      <g class="icon-stroke" transform="translate(2,8) scale(1.33)" stroke-width="1.7">
-        <circle cx="16" cy="8" r="3"/>
-        <circle cx="8" cy="24" r="3"/>
-        <path d="M8 21V11a4 4 0 0 0 4-4"/>
-        <path d="M16 11v4a4 4 0 0 0 4 4h4"/>
-        <path d="M11 19c2 1 4 1 6-1"/>
-        <path d="M14 14c1 2 3 3 5 3"/>
+      <g class="icon-node">
+        <circle cx="10" cy="10" r="3.5"/>
+        <circle cx="22" cy="8" r="3.5"/>
+        <circle cx="30" cy="16" r="3.5"/>
+        <circle cx="14" cy="20" r="3.5"/>
+        <circle cx="26" cy="22" r="3.5"/>
+        <circle cx="6" cy="26" r="3.5"/>
+        <circle cx="20" cy="32" r="3.5"/>
+        <circle cx="12" cy="38" r="3.5"/>
+        <circle cx="30" cy="36" r="3.5"/>
       </g>
-      <g class="icon-stroke" transform="translate(48,0)" stroke-width="2.25">
-        <path d="M0 24 L24 24"/>
-        <path d="M17 17 L24 24 L17 31"/>
+      <g class="icon-stroke" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="48" y1="24" x2="70" y2="24"/>
+        <polyline points="63,18 70,24 63,30"/>
       </g>
-      <g class="icon-stroke" transform="translate(78,0)" stroke-width="2.25">
-        <path d="M24 6v4"/>
-        <path d="M20.2 12.2l-2.9-2.9"/>
-        <path d="M18 24h4"/>
-        <path d="M20.2 20.2l-2.9 2.9"/>
-        <path d="M24 18v4"/>
-        <path d="M31.1 13.9l-2.9 2.9"/>
-        <path d="M34 24h-4"/>
-        <path d="M31.1 13.9l2.9-2.9"/>
-      </g>
-      <circle class="icon-node" cx="102" cy="24" r="2.5"/>`,
+      <g class="icon-node">
+        <circle cx="88" cy="12" r="3.5"/>
+        <circle cx="100" cy="12" r="3.5"/>
+        <circle cx="112" cy="12" r="3.5"/>
+        <circle cx="88" cy="24" r="3.5"/>
+        <circle cx="100" cy="24" r="3.5"/>
+        <circle cx="112" cy="24" r="3.5"/>
+        <circle cx="88" cy="36" r="3.5"/>
+        <circle cx="100" cy="36" r="3.5"/>
+        <circle cx="112" cy="36" r="3.5"/>
+      </g>`,
   },
 
-  // ── 3. KNOT ───────────────────────────────────────────────
-  // Copy: "Before / You manage" — tangled complexity.
-  knot: {
+  // ── 3. JUGGLE ────────────────────────────────────────────
+  // Copy: "Before / You manage" — manual juggling of multiple
+  // vendors and tasks. The universal "juggling cascade" silhouette:
+  // two balls in hands (bottom corners) + one ball in the air (apex)
+  // + two curved throwing arcs. Instantly reads as "managing many
+  // things at once with active effort."
+  //
+  // Pairs as the visual opposite of `spiral` (coordinated hub):
+  // juggle = scattered manual effort; spiral = organized system.
+  //
+  // Redesigned (v3): old crossing S-curves read as an abstract
+  // tangle / "ball of yarn" — no correlation to "you manage."
+  // The juggling cascade is a universally understood metaphor for
+  // manual multitasking and overwhelm.
+  juggle: {
     viewBox: '0 0 48 48',
-    title: 'Tangled complexity',
+    title: 'Manual juggling and management',
     inner: `
-      <g class="icon-stroke" transform="scale(2)" stroke-width="1.125">
-        <circle cx="18" cy="18" r="3"/>
-        <circle cx="6" cy="6" r="3"/>
-        <path d="M6 21V9a9 9 0 0 0 9 9"/>
-        <path d="M15 15c-2-2-5-2-7 0"/>
-        <path d="M18 11c0-2-2-4-4-4"/>
+      <g class="icon-stroke" stroke-width="2.5">
+        <path d="M8 38 C 1 28, 5 14, 24 8"/>
+        <path d="M40 38 C 47 28, 43 14, 24 8"/>
+      </g>
+      <g class="icon-node">
+        <circle cx="8" cy="38" r="3.5"/>
+        <circle cx="40" cy="38" r="3.5"/>
+        <circle cx="24" cy="8" r="3.5"/>
       </g>`,
   },
 

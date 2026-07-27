@@ -4,11 +4,6 @@
  * ─────────────────────────────────────────────────────────────
  * Wraps every page with: <head>, fonts, header, main, footer.
  * Includes the scroll-reveal observer + preview-gateway bridge.
- *
- * Deployment: Astro standalone Node server on Railway.
- * The start script (package.json) binds to HOST=0.0.0.0 and reads
- * Railway's injected PORT env var dynamically. See astro.config.mjs
- * for the adapter configuration.
  */
 import '../styles/global.css';
 import Header from '../components/Header.astro';
